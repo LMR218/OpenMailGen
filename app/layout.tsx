@@ -1,12 +1,12 @@
 import '@mantine/core/styles.css';
 
-import React from 'react';
+import AppShellLayout from '@/components/Layout/Appshell';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'OpenMailGen',
+  description: 'OpenMailGen - The best mail generator',
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -21,7 +21,9 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <AppShellLayout>{children}</AppShellLayout>
+        </MantineProvider>
       </body>
     </html>
   );
