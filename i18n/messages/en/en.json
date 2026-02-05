@@ -1,0 +1,114 @@
+{
+  "Common": {
+    "app_name": "OpenMailGen",
+    "home": "Home",
+    "faq": "FAQ",
+    "copy": "Copy to Clipboard",
+    "copied": "Copied!",
+    "open_email": "Open in Email Client",
+    "select_template": "Select a Template",
+    "generate": "Generate Email",
+    "profile": "My Profile",
+    "profile_incomplete": "Please complete your profile first",
+    "form_section": "Email Form",
+    "email_data": "Email Data",
+    "preview_section": "Email Preview",
+    "email_actions": "Email Actions",
+    "fields": "Fields",
+    "actions": "Actions",
+    "routes": {
+      "templates": "Templates",
+      "profile": "Profile"
+    }
+  },
+  "Profile": {
+    "title": "My Details",
+    "full_name": "Full Name",
+    "job_title": "Job Title",
+    "company_name": "Company Name",
+    "signature": "Email Signature (Optional)",
+    "save": "Save",
+    "saved": "Saved!",
+    "clear": "Clear",
+    "clear_confirm": "Are you sure you want to clear all profile data?"
+  },
+  "Categories": {
+    "noneFound": "No templates found",
+    "time_off": "Time Off",
+    "hr_requests": "HR Requests",
+    "meetings": "Meetings",
+    "general": "General"
+  },
+  "Dates": {
+    "to": "to",
+    "days": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    }
+  },
+  "Landing": {
+    "hero": {
+      "title": "Professional Emails Made Simple",
+      "subtitle": "Generate polished, professional emails in seconds. Choose from our templates for time-off requests, HR communications, meetings, and more.",
+      "cta": "Get Started"
+    },
+    "about": {
+      "title": "About OpenMailGen",
+      "description": "OpenMailGen is a free, open-source email template generator designed to help professionals reduce time spent writing emails. Whether it is requesting time off, scheduling a meeting, or communicating with HR, we are trying to have must cases covered. :)",
+      "features": {
+        "templates": {
+          "title": "Ready-to-Use Templates",
+          "description": "Choose from a variety of professionally written email templates for common workplace scenarios."
+        },
+        "personalization": {
+          "title": "Easy Personalization",
+          "description": "Fill in your details once and let the templates do the rest. Your information is saved locally for quick access."
+        },
+        "bilingual": {
+          "title": "Bilingual Support",
+          "description": "Full support for English and Arabic, including right-to-left layouts for Arabic users."
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "free": {
+          "question": "Is OpenMailGen free to use?",
+          "answer": "Yes! OpenMailGen is completely free and open-source. You can use it without any registration or payment."
+        },
+        "data": {
+          "question": "Is my data safe?",
+          "answer": "Absolutely. All your profile information is stored locally in your browser. We never send your data to any server."
+        },
+        "templates": {
+          "question": "What types of templates are available?",
+          "answer": "We offer templates for time-off requests, HR communications, meeting scheduling, and general workplace emails. More templates are added regularly."
+        },
+        "contribute": {
+          "question": "Can I suggest new templates?",
+          "answer": "Yes! OpenMailGen is open-source. You can contribute new templates or suggest ideas through our GitHub repository."
+        }
+      }
+    }
+  }
+}

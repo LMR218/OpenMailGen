@@ -1,0 +1,32 @@
+{
+  "visa_letter_request": {
+    "name": "Visa Letter Request",
+    "subject": "Visa Letter Request - {fullName}",
+    "body": "Dear HR Team,\n\nI am writing to request a visa support letter for my upcoming travel.\n\nTravel Details:\n- Destination: {destination}\n- Purpose: {purpose}\n- Travel Dates: {travelDates}\n\nI would appreciate if you could provide the letter at your earliest convenience.\n\nPlease let me know if you need any additional information.\n\nThank you,\n{fullName}\n{jobTitle}\n{companyName}",
+    "fields": {
+      "destination_label": "Destination Country",
+      "purpose_label": "Purpose of Travel",
+      "travel_dates_label": "Travel Dates"
+    }
+  },
+  "salary_certificate": {
+    "name": "Salary Certificate Request",
+    "subject": "Salary Certificate Request - {fullName}",
+    "body": "Dear HR Team,\n\nI kindly request a salary certificate for {purpose}.\n\nPlease include the following details:\n- Current position and department\n- Date of joining\n- Current salary details\n\n{additionalInfo, select, other {Additional requirements: {additionalInfo}\n\n}}I would appreciate receiving this certificate by {neededBy} if possible.\n\nThank you for your assistance.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "fields": {
+      "purpose_label": "Purpose (e.g., Bank loan, Visa application)",
+      "needed_by_label": "Needed By Date",
+      "additional_info_label": "Additional Requirements (Optional)"
+    }
+  },
+  "employment_verification": {
+    "name": "Employment Verification Letter",
+    "subject": "Employment Verification Request - {fullName}",
+    "body": "Dear HR Team,\n\nI am requesting an employment verification letter addressed to:\n\nRecipient: {recipientName}\nOrganization: {recipientOrg}\n\nPurpose: {purpose}\n\nPlease include my employment dates, current position, and salary information if required.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "fields": {
+      "recipient_name_label": "Recipient Name",
+      "recipient_org_label": "Recipient Organization",
+      "purpose_label": "Purpose of Letter"
+    }
+  }
+}

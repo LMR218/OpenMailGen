@@ -1,0 +1,36 @@
+{
+  "thank_you": {
+    "name": "Thank You Email",
+    "subject": "Thank You - {subject}",
+    "body": "Dear {recipientName},\n\nI wanted to take a moment to express my sincere gratitude for {reason}.\n\n{additionalMessage, select, other {{additionalMessage}\n\n}}Your support and assistance are greatly appreciated.\n\nThank you once again.\n\nBest regards,\n{fullName}\n{jobTitle}\n{companyName}",
+    "fields": {
+      "recipient_name_label": "Recipient Name",
+      "subject_label": "Subject",
+      "reason_label": "What are you thanking them for?",
+      "additional_message_label": "Additional Message (Optional)"
+    }
+  },
+  "follow_up": {
+    "name": "Follow Up Email",
+    "subject": "Following Up: {originalSubject}",
+    "body": "Hi {recipientName},\n\nI hope this email finds you well.\n\nI am following up on {context} from {originalDate}.\n\n{additionalContext, select, other {{additionalContext}\n\n}}I would appreciate an update when you have a moment.\n\nPlease let me know if you need any additional information from my end.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "fields": {
+      "recipient_name_label": "Recipient Name",
+      "original_subject_label": "Original Subject",
+      "context_label": "What are you following up on?",
+      "original_date_label": "Original Date",
+      "additional_context_label": "Additional Context (Optional)"
+    }
+  },
+  "introduction": {
+    "name": "Self Introduction",
+    "subject": "Introduction - {fullName}, {jobTitle}",
+    "body": "Dear {recipientName},\n\nI hope this email finds you well.\n\nMy name is {fullName}, and I am the {jobTitle} at {companyName}. {introContext}\n\n{background, select, other {A bit about my background: {background}\n\n}}I would love to connect and {connectionPurpose}.\n\nPlease feel free to reach out if you have any questions or would like to schedule a call.\n\nBest regards,\n{fullName}\n{jobTitle}\n{companyName}",
+    "fields": {
+      "recipient_name_label": "Recipient Name",
+      "intro_context_label": "Context for Introduction",
+      "background_label": "Your Background (Optional)",
+      "connection_purpose_label": "Purpose of Connection"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "meeting_notes": {
+    "name": "محضر اجتماع",
+    "subject": "محضر اجتماع - {meetingTitle} - {meetingDate}",
+    "body": "مرحباً بالفريق،\n\nيرجى الاطلاع على محضر اجتماعنا أدناه:\n\nالاجتماع: {meetingTitle}\nالتاريخ: {meetingDate}\nالحضور: {attendees}\n\nالنقاط الرئيسية للنقاش:\n{discussionPoints}\n\nبنود العمل:\n{actionItems}\n\nالخطوات التالية:\n{nextSteps}\n\nيرجى إعلامي إذا فاتني شيء أو لديكم أي أسئلة.\n\nمع أطيب التحيات،\n{fullName}",
+    "fields": {
+      "meeting_title_label": "عنوان الاجتماع",
+      "meeting_date_label": "تاريخ الاجتماع",
+      "attendees_label": "الحضور",
+      "discussion_points_label": "النقاط الرئيسية للنقاش",
+      "action_items_label": "بنود العمل",
+      "next_steps_label": "الخطوات التالية"
+    }
+  },
+  "meeting_reschedule": {
+    "name": "إعادة جدولة اجتماع",
+    "subject": "طلب إعادة جدولة: {meetingTitle}",
+    "body": "مرحباً {recipientName}،\n\nأتمنى أن تصلك هذه الرسالة وأنت بخير.\n\nأكتب إليك لطلب إعادة جدولة اجتماعنا المقرر في {originalDate}.\n\nالسبب: {reason}\n\nأود اقتراح الأوقات البديلة التالية:\n{proposedTimes}\n\nيرجى إعلامي بالوقت الأنسب لك، أو اقتراح بديل يناسب جدولك.\n\nأعتذر عن أي إزعاج قد يسببه ذلك.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
+    "fields": {
+      "recipient_name_label": "اسم المستلم",
+      "meeting_title_label": "عنوان الاجتماع",
+      "original_date_label": "التاريخ الأصلي",
+      "reason_label": "سبب إعادة الجدولة",
+      "proposed_times_label": "الأوقات البديلة المقترحة"
+    }
+  },
+  "meeting_cancellation": {
+    "name": "إلغاء اجتماع",
+    "subject": "ملغى: {meetingTitle} - {meetingDate}",
+    "body": "مرحباً {recipientName}،\n\nيؤسفني إبلاغك بأن الاجتماع المقرر في {meetingDate} قد تم إلغاؤه.\n\nالاجتماع: {meetingTitle}\nالتاريخ الأصلي: {meetingDate}\n\nالسبب: {reason}\n\n{rescheduleNote, select, other {{rescheduleNote}\n\n}}أعتذر عن أي إزعاج قد يسببه ذلك.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
+    "fields": {
+      "recipient_name_label": "اسم المستلم",
+      "meeting_title_label": "عنوان الاجتماع",
+      "meeting_date_label": "تاريخ الاجتماع",
+      "reason_label": "سبب الإلغاء",
+      "reschedule_note_label": "ملاحظة إعادة الجدولة (اختياري)"
+    }
+  }
+}

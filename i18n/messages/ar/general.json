@@ -1,0 +1,36 @@
+{
+  "thank_you": {
+    "name": "رسالة شكر",
+    "subject": "شكراً - {subject}",
+    "body": "عزيزي {recipientName}،\n\nأردت أن أخصص لحظة للتعبير عن امتناني الصادق لـ {reason}.\n\n{additionalMessage, select, other {{additionalMessage}\n\n}}دعمكم ومساعدتكم موضع تقدير كبير.\n\nشكراً لكم مرة أخرى.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}\n{companyName}",
+    "fields": {
+      "recipient_name_label": "اسم المستلم",
+      "subject_label": "الموضوع",
+      "reason_label": "ما الذي تشكرهم عليه؟",
+      "additional_message_label": "رسالة إضافية (اختياري)"
+    }
+  },
+  "follow_up": {
+    "name": "رسالة متابعة",
+    "subject": "متابعة: {originalSubject}",
+    "body": "مرحباً {recipientName}،\n\nأتمنى أن تصلك هذه الرسالة وأنت بخير.\n\nأتابع معك بخصوص {context} من {originalDate}.\n\n{additionalContext, select, other {{additionalContext}\n\n}}أقدر لو تمكنت من تزويدي بتحديث عندما يكون لديك وقت.\n\nيرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية من طرفي.\n\nشكراً لك،\n{fullName}\n{jobTitle}",
+    "fields": {
+      "recipient_name_label": "اسم المستلم",
+      "original_subject_label": "الموضوع الأصلي",
+      "context_label": "ما الذي تتابعه؟",
+      "original_date_label": "التاريخ الأصلي",
+      "additional_context_label": "سياق إضافي (اختياري)"
+    }
+  },
+  "introduction": {
+    "name": "تعريف بالنفس",
+    "subject": "تعريف - {fullName}، {jobTitle}",
+    "body": "عزيزي {recipientName}،\n\nأتمنى أن تصلك هذه الرسالة وأنت بخير.\n\nاسمي {fullName}، وأنا {jobTitle} في {companyName}. {introContext}\n\n{background, select, other {نبذة عن خلفيتي: {background}\n\n}}أود التواصل و{connectionPurpose}.\n\nلا تتردد في التواصل معي إذا كان لديك أي أسئلة أو ترغب في جدولة مكالمة.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}\n{companyName}",
+    "fields": {
+      "recipient_name_label": "اسم المستلم",
+      "intro_context_label": "سياق التعريف",
+      "background_label": "خلفيتك (اختياري)",
+      "connection_purpose_label": "الغرض من التواصل"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "day_off": {
+    "name": "Day Off",
+    "subject": "Day Off - {leaveDate} - {fullName}",
+    "body": "Hi {managerName},\n\nI am writing to inform you that I am requesting a day off on ({leaveDate}) and will not be able to come to work.\n\n{reason, select, other {{reason}\n\n}}I am hoping to return to work on the next working day.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "fields": {
+      "manager_label": "Manager Name",
+      "date_label": "Date of Absence",
+      "reason_label": "Additional Details (Optional)"
+    }
+  },
+  "sick_leave_sudden": {
+    "name": "Sudden Sick Leave",
+    "subject": "Sick Leave - {leaveDate} - {fullName}",
+    "body": "Hi {managerName},\n\nI am writing to inform you that I am unwell today ({leaveDate}) and will not be able to come to work.\n\n{reason, select, other {{reason}\n\n}}I will keep you updated on my recovery and expected return date.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "fields": {
+      "manager_label": "Manager Name",
+      "date_label": "Date of Absence",
+      "reason_label": "Additional Details (Optional)"
+    }
+  },
+  "vacation_request": {
+    "name": "Vacation Request",
+    "subject": "Vacation Request - {dateRange} - {fullName}",
+    "body": "Hi {managerName},\n\nI would like to request time off from {dateRange}.\n\n{reason, select, other {Reason: {reason}\n\n}}Please let me know if you need any additional information or if there are any concerns with these dates.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "fields": {
+      "manager_label": "Manager Name",
+      "date_range_label": "Vacation Dates",
+      "reason_label": "Reason (Optional)"
+    }
+  }
+}
