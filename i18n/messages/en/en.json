@@ -19,6 +19,10 @@
     "routes": {
       "templates": "Templates",
       "profile": "Profile"
+    },
+    "not_found": {
+      "title": "Page Not Found",
+      "home": "Go Home"
     }
   },
   "Profile": {

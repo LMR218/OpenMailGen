@@ -19,6 +19,10 @@
     "routes": {
       "templates": "القوالب",
       "profile": "ملفي الشخصي"
+    },
+    "not_found": {
+      "title": "الصفحة غير موجودة",
+      "home": "العودة للرئيسية"
     }
   },
   "Profile": {

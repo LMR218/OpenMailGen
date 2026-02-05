@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { IconBrandGithub } from '@tabler/icons-react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { ActionIcon, AppShellHeader, Box, Container, Group, Text, Title } from '@mantine/core';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
@@ -9,6 +9,8 @@ import BurgerMenu from './BurgerMenu';
 
 export default async function Header() {
   const t = await getTranslations();
+  const locale = await getLocale();
+
   return (
     <>
       <style>
@@ -19,7 +21,6 @@ export default async function Header() {
             gap: var(--mantine-spacing-md);
           }
           .desktop-actions {
-            display: flex;
             align-self: center;
             gap: var(--mantine-spacing-xs);
           }
@@ -39,7 +40,7 @@ export default async function Header() {
         >
           <Link
             aria-label="Home page"
-            href="/"
+            href={`/${locale}`}
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <Title order={3}>OpenMailGen</Title>
@@ -49,7 +50,7 @@ export default async function Header() {
           <Box visibleFrom="sm" className="desktop-nav">
             <Link
               aria-label="Templates page"
-              href="/templates"
+              href={`/${locale}/templates`}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
               <Text fw="bold">{t('Common.routes.templates')}</Text>
