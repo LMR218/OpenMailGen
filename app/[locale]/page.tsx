@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { IconTemplate, IconUser, IconWorld } from '@tabler/icons-react';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   Accordion,
   AccordionControl,
@@ -18,8 +18,20 @@ import {
   ThemeIcon,
   Title,
 } from '@mantine/core';
+import { localeValues } from '@/i18n/config';
 
-export default async function HomePage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export function generateStaticParams() {
+  return localeValues.map((locale) => ({ locale }));
+}
+
+export default async function HomePage({ params }: PageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations('Landing');
 
   const features = [
@@ -70,7 +82,7 @@ export default async function HomePage() {
               {t('hero.subtitle')}
             </Text>
 
-            <Link href="/templates">
+            <Link href={`/${locale}/templates`}>
               <Button size="xl" radius="md" mt="md">
                 {t('hero.cta')}
               </Button>

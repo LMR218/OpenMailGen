@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   Accordion,
   AccordionControl,
@@ -15,8 +15,20 @@ import {
   Title,
 } from '@mantine/core';
 import { Template, templates, type TemplateCategory } from '@/config/templates';
+import { localeValues } from '@/i18n/config';
 
-export default async function TemplatesPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export function generateStaticParams() {
+  return localeValues.map((locale) => ({ locale }));
+}
+
+export default async function TemplatesPage({ params }: PageProps) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations();
 
   /** Group templates by category */
@@ -67,7 +79,7 @@ export default async function TemplatesPage() {
                   <Grid>
                     {categoryTemplates.map((template) => (
                       <GridCol key={template.id} span={{ base: 12, sm: 6, md: 4 }}>
-                        <TemplateCard template={template} translationFN={t} />
+                        <TemplateCard template={template} translationFN={t} locale={locale} />
                       </GridCol>
                     ))}
                   </Grid>
@@ -84,9 +96,11 @@ export default async function TemplatesPage() {
 function TemplateCard({
   template,
   translationFN: t,
+  locale,
 }: {
   template: Template;
   translationFN: (key: string) => string;
+  locale: string;
 }) {
   return (
     <>
@@ -103,7 +117,7 @@ function TemplateCard({
         }
       `}
       </style>
-      <Link href={`/templates/${template.id}`} style={{ textDecoration: 'none' }}>
+      <Link href={`/${locale}/templates/${template.id}`} style={{ textDecoration: 'none' }}>
         <Card className="card" padding="lg" radius="md" shadow="sm">
           <Text fw={600} size="lg">
             {t(`Templates.${template.id}.name`)}
