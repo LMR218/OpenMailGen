@@ -4,7 +4,7 @@ import Header from './Header';
 
 export default function AppShellLayout({ children }: { children: React.ReactNode }) {
   return (
-    <AppShell header={{ height: 60 }} footer={{ height: 40, offset: true }} padding="md">
+    <AppShell header={{ height: 60 }} footer={{ height: 60, offset: true }} padding="md">
       <Header />
       <AppShellMain>
         <Container size="xl">{children}</Container>

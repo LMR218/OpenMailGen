@@ -1,49 +1,82 @@
 import Link from 'next/link';
 import { IconBrandGithub } from '@tabler/icons-react';
-import { ActionIcon, AppShellHeader, Container, Group, Text, Title } from '@mantine/core';
+import { getTranslations } from 'next-intl/server';
+import { ActionIcon, AppShellHeader, Box, Container, Group, Text, Title } from '@mantine/core';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import LanguageSelect from '../LanguageSelect/LanguageSelect';
+import { SettingsDrawer } from '../SettingsDrawer/SettingsDrawer';
+import BurgerMenu from './BurgerMenu';
 
-export default function Header() {
+export default async function Header() {
+  const t = await getTranslations();
   return (
-    <AppShellHeader
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-      }}
-    >
-      <Container
-        size="xl"
-        style={{ display: 'flex', justifyContent: 'space-between', flexGrow: 1 }}
-        py="xs"
-      >
-        <Link aria-label="Home page" href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <Title order={3}>OpenMailGen</Title>
-        </Link>
+    <>
+      <style>
+        {`
+          .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--mantine-spacing-md);
+          }
+          .desktop-actions {
+            display: flex;
+            align-self: center;
+            gap: var(--mantine-spacing-xs);
+          }
+        `}
+      </style>
 
-        <Group>
+      <AppShellHeader
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <Container
+          size="xl"
+          style={{ display: 'flex', justifyContent: 'space-between', flexGrow: 1 }}
+          py="xs"
+        >
           <Link
-            aria-label="FAQ page"
-            href="/FAQ"
+            aria-label="Home page"
+            href="/"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <Text fw="bold">FAQ</Text>
+            <Title order={3}>OpenMailGen</Title>
           </Link>
-        </Group>
 
-        <Group>
-          <ColorSchemeToggle />
-          <Link
-            aria-label="Github Repo"
-            href="https://github.com/LMR218/OpenMailGen"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ActionIcon variant="default" size="lg" aria-label="Github Repo">
-              <IconBrandGithub stroke={1.5} />
-            </ActionIcon>
-          </Link>
-        </Group>
-      </Container>
-    </AppShellHeader>
+          {/* Desktop Navigation */}
+          <Box visibleFrom="sm" className="desktop-nav">
+            <Link
+              aria-label="Templates page"
+              href="/templates"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <Text fw="bold">{t('Common.routes.templates')}</Text>
+            </Link>
+          </Box>
+
+          {/* Desktop Actions */}
+          <Group className="desktop-actions" visibleFrom="sm">
+            <LanguageSelect />
+            <SettingsDrawer />
+            <ColorSchemeToggle />
+            <Link
+              aria-label="Github Repo"
+              href="https://github.com/LMR218/OpenMailGen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ActionIcon color="dark.5" size="lg" aria-label="Github Repo">
+                <IconBrandGithub stroke={1.5} />
+              </ActionIcon>
+            </Link>
+          </Group>
+
+          {/* Mobile Burger Menu */}
+          <BurgerMenu />
+        </Container>
+      </AppShellHeader>
+    </>
   );
 }
