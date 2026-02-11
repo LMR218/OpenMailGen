@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import { IconBrandGithub } from '@tabler/icons-react';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { useLocale, useTranslations } from 'next-intl';
 import { ActionIcon, AppShellHeader, Box, Container, Group, Text, Title } from '@mantine/core';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import { SettingsDrawer } from '../SettingsDrawer/SettingsDrawer';
 import BurgerMenu from './BurgerMenu';
 
-export default async function Header() {
-  const t = await getTranslations();
-  const locale = await getLocale();
+export default function Header() {
+  const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <>

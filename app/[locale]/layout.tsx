@@ -7,6 +7,7 @@ import {
   MantineProvider,
 } from '@mantine/core';
 import AppShellLayout from '@/components/Layout/Appshell';
+import { StateContextProvider } from '@/components/Layout/stateContext';
 import { defaultLocale, isRtlLocale, localeValues, type Locale } from '@/i18n/config';
 import { theme } from '../../theme';
 
@@ -44,7 +45,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <NextIntlClientProvider locale={locale} messages={messages}>
           <DirectionProvider>
             <MantineProvider theme={theme}>
-              <AppShellLayout>{children}</AppShellLayout>
+              <StateContextProvider>
+                <AppShellLayout>{children}</AppShellLayout>
+              </StateContextProvider>
             </MantineProvider>
           </DirectionProvider>
         </NextIntlClientProvider>

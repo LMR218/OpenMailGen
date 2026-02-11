@@ -9,8 +9,6 @@ export default function Footer() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginInline: '1rem',
-        paddingBlock: '0.5rem',
       }}
     >
       <Text>{CURRENT_YEAR} OpenMailGen. All rights reserved.</Text>
