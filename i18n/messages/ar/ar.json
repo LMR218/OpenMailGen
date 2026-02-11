@@ -17,6 +17,8 @@
     "email_actions": "إجراءات البريد",
     "fields": "حقول",
     "actions": "إجراءات",
+    "pages":"المسارات",
+    "languages":"اللغات",
     "routes": {
       "templates": "القوالب",
       "profile": "ملفي الشخصي"

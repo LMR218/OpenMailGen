@@ -135,7 +135,7 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
       <AppShell.Section
         p={0}
         h="var(--app-shell-header-height)"
-        style={{ borderBottom: '1px solid var(--mantine-color-default-border)' }}
+        style={{ borderBottom: '1px solid var(--mantine-color-disabled-border)' }}
       >
         <Flex p={0} h="100%" align="center" justify="space-between">
           <Title order={3} fz={{ base: '1rem', md: '1.25rem' }}>

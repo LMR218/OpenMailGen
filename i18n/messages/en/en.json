@@ -17,6 +17,8 @@
     "email_actions": "Email Actions",
     "fields": "Fields",
     "actions": "Actions",
+    "pages": "Routes",
+    "languages": "Languages",
     "routes": {
       "templates": "Templates",
       "profile": "Profile"
