@@ -69,12 +69,12 @@ export default async function HomePage({ params }: PageProps) {
         <Container size="md">
           <Stack align="center" gap="xl" ta="center">
             <Group gap="xs">
-              <Title order={1} size="3rem">
+              <Title order={1} fz={{ base: '2rem', md: '3rem' }} fw={700}>
                 OpenMailGen
               </Title>
             </Group>
 
-            <Title order={2} fw={400} size="h2">
+            <Title order={2} fz={{ base: '1.5rem', md: '2rem' }} fw={400}>
               {t('hero.title')}
             </Title>
 
@@ -94,11 +94,11 @@ export default async function HomePage({ params }: PageProps) {
       {/* About Section */}
       <Container component="section" size="lg" id="about">
         <Stack gap="xl">
-          <Title order={2} ta="center">
+          <Title order={2} fz={{ base: '1.5rem', md: '2rem' }} ta="center">
             {t('about.title')}
           </Title>
 
-          <Text size="lg" ta="center" maw={800} mx="auto" c="dimmed">
+          <Text fz={{ base: '1rem', md: '1.25rem' }} ta="center" maw={800} mx="auto" c="dimmed">
             {t('about.description')}
           </Text>
 
@@ -111,9 +111,11 @@ export default async function HomePage({ params }: PageProps) {
                       <feature.icon size={32} stroke={1.5} />
                     </ThemeIcon>
 
-                    <Title order={4}>{t(`about.features.${feature.key}.title`)}</Title>
+                    <Title order={4} fz={{ base: '1.1rem', md: '1.25rem' }}>
+                      {t(`about.features.${feature.key}.title`)}
+                    </Title>
 
-                    <Text size="sm" c="dimmed">
+                    <Text fz={{ base: '0.875rem', md: '1.1rem' }} c="dimmed">
                       {t(`about.features.${feature.key}.description`)}
                     </Text>
                   </Stack>
@@ -144,10 +146,14 @@ export default async function HomePage({ params }: PageProps) {
               {faqItems.map((item) => (
                 <AccordionItem key={item} value={item}>
                   <AccordionControl>
-                    <Text fw={500}>{t(`faq.items.${item}.question`)}</Text>
+                    <Text fw={500} fz={{ base: '0.875rem', md: '1.25rem' }}>
+                      {t(`faq.items.${item}.question`)}
+                    </Text>
                   </AccordionControl>
                   <AccordionPanel>
-                    <Text c="dimmed">{t(`faq.items.${item}.answer`)}</Text>
+                    <Text c="dimmed" fz={{ base: '0.825rem', md: '1.15rem' }}>
+                      {t(`faq.items.${item}.answer`)}
+                    </Text>
                   </AccordionPanel>
                 </AccordionItem>
               ))}

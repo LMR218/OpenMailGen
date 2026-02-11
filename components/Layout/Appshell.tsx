@@ -18,12 +18,14 @@ export default function AppShellLayout({ children }: { children: React.ReactNode
         breakpoint: 'md',
         collapsed: { mobile: !asideOpen, desktop: !asideOpen },
       }}
-      padding="md"
+      padding={{ base: 'xs', md: 'md' }}
     >
       <Header />
 
       <AppShellMain>
-        <Container size="xl">{children}</Container>
+        <Container size="xl" p={{ base: 0, md: 'md' }}>
+          {children}
+        </Container>
       </AppShellMain>
 
       <Footer />
