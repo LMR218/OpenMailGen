@@ -1,13 +1,36 @@
-# OpenMailGen 📧
+---
+post_title: OpenMailGen
+author1: OpenMailGen Maintainers
+post_slug: openmailgen-readme
+microsoft_alias: n/a
+featured_image: https://placehold.co/1200x630.png
+categories:
+  - documentation
+tags:
+  - nextjs
+  - mantine
+  - templates
+summary: OpenMailGen generates professional email templates with i18n support.
+post_date: 2026-02-11
+---
 
-OpenMailGen is a professional email generator built with **Next.js 16**, **Mantine UI**, and **TypeScript**. It helps users create structured, professional emails for various scenarios (HR requests, meetings, time off, etc.) with support for multiple languages.
+## OpenMailGen 📧
+
+OpenMailGen is a professional email generator built with **Next.js 16**,
+**Mantine UI**, and **TypeScript**. It helps users create structured,
+professional emails for various scenarios (HR requests, meetings, time off,
+etc.) with support for multiple languages.
 
 ## 🚀 Features
 
-- **Static Site Generation (SSG)**: Fast, SEO-friendly static pages for all locales.
-- **Internationalization (i18n)**: Full support for **English** and **Arabic** (RTL), powered by `next-intl`.
-- **Responsive Design**: Mobile-first UI with a custom **Burger Menu** and responsive AppShell.
-- **Template System**: Modular template engine for defining email structures (Time Off, HR, Meetings).
+- **Static Site Generation (SSG)**: Fast, SEO-friendly static pages for all
+  locales.
+- **Internationalization (i18n)**: Full support for **English** and **Arabic**
+  (RTL), powered by `next-intl`.
+- **Responsive Design**: Mobile-first UI with a custom **Burger Menu** and
+  responsive AppShell.
+- **Template System**: Modular template engine for defining email structures
+  (Time Off, HR, Meetings).
 - **Themes**: Light/Dark mode toggling with persisted preference.
 - **Developer Experience**:
   - **Typescript** for type safety.
@@ -52,13 +75,19 @@ pnpm dev
 
 ## 🌍 Internationalization (SSG)
 
-This project uses **[locale] segment routing** to generate static pages for each language.
+This project uses **[locale] segment routing** to generate static pages for
+each language.
 
 - `/en` - English version
 - `/ar` - Arabic version
 - `/` - Default locale (English)
 
-Configuration is located in `i18n/` directory.
+Configuration is located in the `i18n/` directory.
+
+## 📚 Documentation
+
+Template contributors should follow
+[docs/adding-templates.md](docs/adding-templates.md).
 
 ## 🧪 Git Hooks (Husky)
 
