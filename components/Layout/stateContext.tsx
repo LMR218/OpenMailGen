@@ -4,21 +4,21 @@ import React, { createContext, useContext, useEffect } from 'react';
 import { usePathname } from 'next/dist/client/components/navigation';
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
 
-interface ClientUIContextType {
+interface StateContextType {
   isMobileView: boolean;
 
   asideOpen: boolean;
   toggleAside: () => void;
 }
 
-const StateContext = createContext<ClientUIContextType | undefined>(undefined);
+const StateContext = createContext<StateContextType | undefined>(undefined);
 
 /**
  * Provides global UI state for the application, such as mobile view detection and aside panel state.
  */
 export const StateContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const routePath = usePathname();
-  const isMobileView = useMediaQuery(`(max-width: 768px)`);
+  const isMobileView = useMediaQuery(`(max-width: 768px)`, false);
   const [asideOpen, { toggle: toggleAside, open: openAside, close: closeAside }] =
     useDisclosure(false);
 
@@ -46,7 +46,7 @@ export const StateContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
 export function useStateContext() {
   const ctx = useContext(StateContext);
   if (!ctx) {
-    throw new Error('useStateContext must be used within ClientUIProvider');
+    throw new Error('useStateContext must be used within StateContextProvider');
   }
   return ctx;
 }
