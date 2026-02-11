@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Card, Grid, GridCol, Stack, Title } from '@mantine/core';
+import { Stack, Title } from '@mantine/core';
 import type { Template } from '@/config/templates';
 import { useProfile } from '@/lib/hooks/useProfile';
 import { buildInterpolationData } from '@/lib/utils/interpolation';
@@ -35,27 +35,11 @@ export function TemplateEngine({ template }: TemplateEngineProps) {
         {templateName}
       </Title>
 
-      <Grid>
-        <GridCol span={{ base: 12, xs: 6, sm: 4, md: 4 }}>
-          <Title mb="xs" order={3} id="form-section">
-            {t('Common.email_data')}
-          </Title>
-          <Card withBorder shadow="md" component="section" p="md">
-            <FormGenerator template={template} values={formValues} onChange={handleChange} />
-          </Card>
-        </GridCol>
+      <EmailActions subject={subject} body={body} />
 
-        <GridCol span={{ base: 12, xs: 6, sm: 8, md: 8 }}>
-          <Title mb="xs" order={3} id="preview-section">
-            {t('Common.preview_section')}
-          </Title>
-          <PreviewPanel subject={subject} body={body} />
-        </GridCol>
-      </Grid>
+      <PreviewPanel subject={subject} body={body} />
 
-      <Card withBorder shadow="md" component="section" p="xs">
-        <EmailActions subject={subject} body={body} />
-      </Card>
+      <FormGenerator template={template} values={formValues} onChange={handleChange} />
     </Stack>
   );
 }

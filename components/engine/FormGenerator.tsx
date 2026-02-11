@@ -1,9 +1,20 @@
 'use client';
 
+import { IconX } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
-import { NumberInput, Select, Stack, Textarea, TextInput } from '@mantine/core';
+import {
+  ActionIcon,
+  AppShell,
+  Flex,
+  NumberInput,
+  Select,
+  Textarea,
+  TextInput,
+  Title,
+} from '@mantine/core';
 import { DateInput, DatePickerInput, TimeInput } from '@mantine/dates';
 import type { Template, TemplateInput } from '@/config/templates';
+import { useStateContext } from '../Layout/stateContext';
 
 interface FormGeneratorProps {
   template: Template;
@@ -12,10 +23,10 @@ interface FormGeneratorProps {
 }
 
 export function FormGenerator({ template, values, onChange }: FormGeneratorProps) {
-  const t = useTranslations(`Templates.${template.id}.fields`);
+  const t = useTranslations();
 
   const renderInput = (input: TemplateInput) => {
-    const label = t(input.labelKey);
+    const label = t(`Templates.${template.id}.fields.${input.labelKey}`);
 
     const defaultValue = input.type === 'daterange' ? [null, null] : '';
     const value = values[input.key] ?? defaultValue;
@@ -117,11 +128,33 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
     }
   };
 
+  const { toggleAside } = useStateContext();
+
   return (
-    <Stack gap="md" role="group" aria-label="Email form fields">
-      {template.inputs.map((input) => (
-        <div key={input.key}>{renderInput(input)}</div>
-      ))}
-    </Stack>
+    <AppShell.Aside px="md" role="group" aria-label="Email form fields">
+      <AppShell.Section
+        p={0}
+        h="var(--app-shell-header-height)"
+        style={{ borderBottom: '1px solid var(--mantine-color-default-border)' }}
+      >
+        <Flex p={0} h="100%" align="center" justify="space-between">
+          <Title order={3} fz={{ base: '1rem', md: '1.25rem' }}>
+            {t('Common.email_data', { defaultValue: 'Email Fields' })}
+          </Title>
+
+          <ActionIcon variant="subtle" color="red.4" onClick={toggleAside} aria-label="Close form">
+            <IconX size={20} />
+          </ActionIcon>
+        </Flex>
+      </AppShell.Section>
+
+      <AppShell.Section grow py="md">
+        <Flex gap="sm" direction="column">
+          {template.inputs.map((input) => (
+            <div key={input.key}>{renderInput(input)}</div>
+          ))}
+        </Flex>
+      </AppShell.Section>
+    </AppShell.Aside>
   );
 }
