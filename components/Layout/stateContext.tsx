@@ -17,16 +17,17 @@ const StateContext = createContext<ClientUIContextType | undefined>(undefined);
  * Provides global UI state for the application, such as mobile view detection and aside panel state.
  */
 export const StateContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const path = usePathname();
+  const routePath = usePathname();
   const isMobileView = useMediaQuery(`(max-width: 768px)`);
-  const [asideOpen, { toggle: toggleAside }] = useDisclosure(false);
+  const [asideOpen, { toggle: toggleAside, open: openAside, close: closeAside }] =
+    useDisclosure(false);
 
   useEffect(() => {
     // Close aside on route change
     if (asideOpen) {
-      toggleAside();
+      routePath.includes('templates/') ? openAside() : closeAside();
     }
-  }, [path]);
+  }, [routePath]);
 
   return (
     <StateContext.Provider

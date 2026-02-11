@@ -14,9 +14,9 @@ export default function AppShellLayout({ children }: { children: React.ReactNode
       header={{ height: 60 }}
       footer={{ height: 60, offset: true }}
       aside={{
-        width: 400,
+        width: { base: '100%', md: 400, lg: 500 },
         breakpoint: 'md',
-        collapsed: { mobile: !asideOpen, desktop: asideOpen },
+        collapsed: { mobile: !asideOpen, desktop: !asideOpen },
       }}
       padding="md"
     >
