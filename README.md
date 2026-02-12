@@ -1,18 +1,3 @@
----
-post_title: OpenMailGen
-author1: OpenMailGen Maintainers
-post_slug: openmailgen-readme
-microsoft_alias: n/a
-featured_image: https://placehold.co/1200x630.png
-categories:
-  - documentation
-tags:
-  - nextjs
-  - mantine
-  - templates
-summary: OpenMailGen generates professional email templates with i18n support.
-post_date: 2026-02-11
----
 
 ## OpenMailGen 📧
 

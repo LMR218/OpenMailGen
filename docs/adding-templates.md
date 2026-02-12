@@ -1,19 +1,3 @@
----
-post_title: Adding Email Templates
-author1: OpenMailGen Maintainers
-post_slug: adding-email-templates
-microsoft_alias: n/a
-featured_image: https://placehold.co/1200x630.png
-categories:
-  - documentation
-tags:
-  - templates
-  - i18n
-  - contributing
-ai_note: Assisted by AI.
-summary: Steps and checklist for adding new email templates and translations.
-post_date: 2026-02-11
----
 
 ## Overview
 
