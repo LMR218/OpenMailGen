@@ -6,6 +6,7 @@ export const timeOffTemplates: Template[] = [
     category: 'time_off',
     inputs: [
       { key: 'managerName', type: 'text', labelKey: 'manager_label', required: true },
+      { key: 'managerRole', type: 'text', labelKey: 'manager_role_label' },
       { key: 'leaveDate', type: 'date', labelKey: 'date_label', required: true },
       { key: 'reason', type: 'textarea', labelKey: 'reason_label' },
     ],

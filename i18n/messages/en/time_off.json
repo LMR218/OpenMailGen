@@ -1,10 +1,11 @@
 {
   "day_off": {
     "name": "Day Off",
-    "subject": "Day Off - {leaveDate} - {fullName}",
-    "body": "Hi {managerName},\n\nI am writing to inform you that I am requesting a day off on ({leaveDate}) and will not be able to come to work.\n\n{reason, select, other {{reason}\n\n}}I am hoping to return to work on the next working day.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "subject": "Day Off - {fullName}",
+    "body": "Hi, \n\n{managerName}\n{managerRole},\n\nI am writing to inform you that I am requesting a day off on ({leaveDate}) and will not be able to come to work.\n\n{reason, select, other {{reason}\n\n}}I am hoping to return to work on the next working day.\n\nBest regards,\n{fullName}\n{jobTitle}",
     "fields": {
       "manager_label": "Manager Name",
+      "manager_role_label": "Manager Role (Optional)",
       "date_label": "Date of Absence",
       "reason_label": "Additional Details (Optional)"
     }

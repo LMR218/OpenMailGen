@@ -1,10 +1,11 @@
 {
   "day_off": {
-    "name": "يوم اجازة",
-    "subject": "طلب يوم اجازة - {leaveDate} - {fullName}",
-    "body": "مرحباً {managerName}،\n\nأود إبلاغكم بأنني أطلب إجازة لمدة يوم ({leaveDate}) وسأكون غير قادر على الحضور للعمل.\n\n{reason, select, other {{reason}\n\n}}أنا أأمل أن أعود إلى العمل في اليوم التالي.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
+    "name": "طلب اجازة",
+    "subject": "طلب اجازة - {fullName}",
+    "body": "السلام عليكم، \n\n {managerName}\n{managerRole},\n\nأود إبلاغكم بأنني أطلب إجازة لمدة يوم ({leaveDate}) وسأكون غير قادر على الحضور للعمل.\n\n{reason, select, other {{reason}\n\n}}أنا أأمل أن أعود إلى العمل في اليوم التالي.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
     "fields": {
       "manager_label": "اسم المدير",
+      "manager_role_label": "صفة المدير (اختياري)",
       "date_label": "تاريخ الغياب",
       "reason_label": "تفاصيل إضافية (اختياري)"
     }
