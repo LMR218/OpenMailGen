@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { IconBrandGithub } from '@tabler/icons-react';
 import { useLocale, useTranslations } from 'next-intl';
-import { ActionIcon, AppShellHeader, Box, Container, Group, Text, Title } from '@mantine/core';
+import { ActionIcon, AppShellHeader, Container, Group, Text, Title } from '@mantine/core';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import { SettingsDrawer } from '../SettingsDrawer/SettingsDrawer';
@@ -20,16 +20,17 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <Box visibleFrom="sm" className={classes.desktopNav}>
+        <Group visibleFrom="sm" className={classes.desktopNav}>
           <Link aria-label="Templates page" href={`/${locale}/templates`} className={classes.link}>
-            <Text fw="bold">{t('Common.routes.templates')}</Text>
+            <Text size="lg" fw="bold">
+              {t('Common.routes.templates')}
+            </Text>
           </Link>
-        </Box>
-
+        </Group>
         {/* Desktop Actions */}
         <Group className={classes.desktopActions} visibleFrom="sm">
-          <LanguageSelect />
           <SettingsDrawer />
+          <LanguageSelect />
           <ColorSchemeToggle />
           <Link
             aria-label="Github Repo"

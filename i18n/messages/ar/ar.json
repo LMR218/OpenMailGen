@@ -8,7 +8,7 @@
     "open_email": "فتح في البريد الإلكتروني",
     "select_template": "اختر قالباً",
     "generate": "إنشاء البريد",
-    "profile": "ملفي الشخصي",
+    "profile": "بياناتي",
     "profile_incomplete": "يرجى إكمال ملفك الشخصي أولاً",
     "form_section": "نموذج البريد",
     "email_data": "بيانات البريد",
@@ -17,8 +17,8 @@
     "email_actions": "إجراءات البريد",
     "fields": "حقول",
     "actions": "إجراءات",
-    "pages":"المسارات",
-    "languages":"اللغات",
+    "pages": "المسارات",
+    "languages": "اللغات",
     "routes": {
       "templates": "القوالب",
       "profile": "ملفي الشخصي"
@@ -26,6 +26,11 @@
     "not_found": {
       "title": "الصفحة غير موجودة",
       "home": "العودة للرئيسية"
+    },
+    "theme": {
+      "dark": "الوضع المظلم",
+      "light": "الوضع المضئ",
+      "device": "وضع الجهاز"
     }
   },
   "Profile": {

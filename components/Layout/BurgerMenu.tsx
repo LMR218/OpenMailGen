@@ -1,16 +1,18 @@
 'use client';
 
 import Link from 'next/link';
-import { IconBrandGithub } from '@tabler/icons-react';
+import { IconBrandGithub, IconHome, IconTemplate } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
-import { ActionIcon, Burger, Divider, Drawer, Group, NavLink, Stack, Text } from '@mantine/core';
+import { Burger, Button, Divider, Drawer, Group, NavLink, Stack, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import { SettingsDrawer } from '../SettingsDrawer/SettingsDrawer';
+import { useStateContext } from './stateContext';
 
 export default function BurgerMenu() {
   const [opened, { toggle, close }] = useDisclosure(false);
+  const { isMobileView } = useStateContext();
   const t = useTranslations();
 
   return (
@@ -32,12 +34,19 @@ export default function BurgerMenu() {
               </Text>
               <Divider />
             </Group>
-            <NavLink component={Link} href="/" label={t('Common.home')} onClick={close} />
+            <NavLink
+              component={Link}
+              href="/"
+              label={t('Common.home')}
+              leftSection={<IconHome size={18} />}
+              onClick={close}
+            />
             <NavLink
               component={Link}
               href="/templates"
               label={t('Common.routes.templates')}
               onClick={close}
+              leftSection={<IconTemplate size={18} />}
             />
           </Stack>
 
@@ -49,26 +58,21 @@ export default function BurgerMenu() {
               <Divider />
             </Group>
 
-            <Group px="md" gap={0} justify="space-between">
-              <SettingsDrawer />
+            <SettingsDrawer />
 
-              <Divider orientation="vertical" />
+            <ColorSchemeToggle withText />
 
-              <ColorSchemeToggle />
-
-              <Divider orientation="vertical" />
-
-              <Link
-                aria-label="Github Repo"
-                href="https://github.com/LMR218/OpenMailGen"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ActionIcon variant="default" size="lg" aria-label="Github Repo">
-                  <IconBrandGithub stroke={1.5} />
-                </ActionIcon>
-              </Link>
-            </Group>
+            <Button
+              component={Link}
+              href="https://github.com/LMR218/OpenMailGen"
+              target="_blank"
+              variant="default"
+              leftSection={<IconBrandGithub />}
+              fullWidth={isMobileView}
+              justify="start"
+            >
+              Github
+            </Button>
           </Stack>
 
           <Stack>

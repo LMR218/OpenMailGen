@@ -2,42 +2,33 @@
 
 import { IconCheck, IconSettings, IconTrash } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
-import {
-  ActionIcon,
-  Button,
-  Drawer,
-  Group,
-  Stack,
-  Textarea,
-  TextInput,
-  Tooltip,
-} from '@mantine/core';
+import { Button, Drawer, Group, Stack, Textarea, TextInput } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useProfile } from '@/lib/hooks/useProfile';
+import { useStateContext } from '../Layout/stateContext';
 
 export function SettingsDrawer() {
-  const t = useTranslations('Profile');
-  const tCommon = useTranslations('Common');
+  const t = useTranslations();
   const [opened, { open, close }] = useDisclosure(false);
   const { profile, updateProfile, resetProfile, isProfileComplete } = useProfile();
+  const { isMobileView } = useStateContext();
 
   return (
     <>
-      <Tooltip label={tCommon('profile')}>
-        <ActionIcon
-          size="lg"
-          aria-label={tCommon('profile')}
-          onClick={open}
-          color={isProfileComplete ? 'blue.6' : 'orange.6'}
-        >
-          <IconSettings stroke={1.5} />
-        </ActionIcon>
-      </Tooltip>
+      <Button
+        onClick={open}
+        color={isProfileComplete ? 'blue' : 'red'}
+        leftSection={<IconSettings />}
+        fullWidth={isMobileView}
+        justify="start"
+      >
+        {t('Common.profile')}
+      </Button>
 
-      <Drawer opened={opened} onClose={close} title={t('title')} offset={8} radius="md">
+      <Drawer opened={opened} onClose={close} title={t('Profile.title')} offset={8} radius="md">
         <Stack>
           <TextInput
-            label={t('full_name')}
+            label={t('Profile.full_name')}
             placeholder="John Doe"
             value={profile.fullName}
             onChange={(e) => updateProfile({ fullName: e.target.value })}
@@ -46,7 +37,7 @@ export function SettingsDrawer() {
           />
 
           <TextInput
-            label={t('job_title')}
+            label={t('Profile.job_title')}
             placeholder="Software Engineer"
             value={profile.jobTitle}
             onChange={(e) => updateProfile({ jobTitle: e.target.value })}
@@ -54,7 +45,7 @@ export function SettingsDrawer() {
           />
 
           <TextInput
-            label={t('company_name')}
+            label={t('Profile.company_name')}
             placeholder="Acme Inc."
             value={profile.companyName}
             onChange={(e) => updateProfile({ companyName: e.target.value })}
@@ -62,7 +53,7 @@ export function SettingsDrawer() {
           />
 
           <Textarea
-            label={t('signature')}
+            label={t('Profile.signature')}
             placeholder="Best regards,&#10;John Doe"
             value={profile.signature || ''}
             onChange={(e) => updateProfile({ signature: e.target.value })}
@@ -77,14 +68,14 @@ export function SettingsDrawer() {
               leftSection={<IconTrash size={18} />}
               onClick={resetProfile}
             >
-              {t('clear')}
+              {t('Profile.clear')}
             </Button>
             <Button
               leftSection={<IconCheck size={18} />}
               onClick={close}
               disabled={!isProfileComplete}
             >
-              {t('save')}
+              {t('Profile.save')}
             </Button>
           </Group>
         </Stack>

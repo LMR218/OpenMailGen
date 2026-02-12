@@ -39,7 +39,6 @@ export default function LanguageSelect() {
       value={currentLocale}
       onChange={handleChange}
       allowDeselect={false}
-      searchable
     />
   );
 }

@@ -8,7 +8,7 @@
     "open_email": "Open in Email Client",
     "select_template": "Select a Template",
     "generate": "Generate Email",
-    "profile": "My Profile",
+    "profile": "Profile",
     "profile_incomplete": "Please complete your profile first",
     "form_section": "Email Form",
     "email_data": "Email Data",
@@ -26,6 +26,11 @@
     "not_found": {
       "title": "Page Not Found",
       "home": "Go Home"
+    },
+    "theme": {
+      "dark": "Dark Theme",
+      "light": "Light Theme",
+      "device": "Device Theme"
     }
   },
   "Profile": {
