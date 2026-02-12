@@ -4,8 +4,22 @@ import { meetingsTemplates } from './templates/meetings';
 import { timeOffTemplates } from './templates/time_off';
 import type { Template, TemplateCategory } from './templates/types';
 
-// Re-export types from centralized types file
-export type { InputType, Template, TemplateCategory, TemplateInput } from './templates/types';
+export type {
+  InputType,
+  Template,
+  TemplateCategory,
+  TemplateInput,
+  SelectInput,
+  SelectOption,
+  FormValues,
+  BaseInput,
+  TextInput,
+  TextareaInput,
+  NumberInput,
+  DateInput,
+  TimeInput,
+  DateRangeInput,
+} from './templates/types';
 
 /**
  * Combined template registry - spreads all category templates

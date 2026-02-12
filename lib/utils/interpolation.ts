@@ -1,17 +1,36 @@
-import type { Template } from '@/config/templates';
+import type { FormValues, SelectInput, Template, TemplateInput } from '@/config/templates';
 import type { UserProfile } from '@/lib/hooks/useProfile';
 import { formatDate, toDate } from './date';
 
+function isSelectInput(input: TemplateInput): input is SelectInput {
+  return input.type === 'select';
+}
+
 /**
  * Formats a value for template interpolation
- * Handles dates, date ranges, and converts to string
+ * Handles dates, date ranges, select options, and converts to string
  * @param value - The value to format
  * @param t - Translation function
+ * @param input - The template input definition (optional, for select options)
+ * @param template - The template (for select option translation keys)
  * @returns The formatted value
  */
-export function formatInterpolationValue(value: any, t: (key: string) => string): string {
+export function formatInterpolationValue(
+  value: any,
+  t: (key: string) => string,
+  input?: TemplateInput,
+  template?: Template
+): string {
   if (value === null || value === undefined || value === '') {
     return '';
+  }
+
+  // Handle select options
+  if (input && isSelectInput(input) && template) {
+    const option = input.options.find((opt) => opt.value === value);
+    if (option) {
+      return t(`Templates.${template.id}.fields.${option.labelKey}`);
+    }
   }
 
   // Handle date range (array of 2 dates)
@@ -51,7 +70,7 @@ const PROFILE_TRANSLATION_KEYS: Record<keyof UserProfile, string> = {
  */
 export function buildInterpolationData(
   template: Template,
-  formValues: Record<string, any>,
+  formValues: FormValues,
   userProfile: UserProfile,
   t: (key: string) => string
 ): Record<string, string> {
@@ -76,7 +95,8 @@ export function buildInterpolationData(
 
   // Add formatted form values (overrides placeholders)
   Object.entries(formValues).forEach(([key, value]) => {
-    const formatted = formatInterpolationValue(value, t);
+    const input = template.inputs.find((inp) => inp.key === key);
+    const formatted = formatInterpolationValue(value, t, input, template);
     if (formatted) {
       data[key] = formatted;
     }

@@ -13,32 +13,37 @@ import {
   Title,
 } from '@mantine/core';
 import { DateInput, DatePickerInput, TimeInput } from '@mantine/dates';
-import type { Template, TemplateInput } from '@/config/templates';
+import type { FormValues, SelectInput, Template, TemplateInput } from '@/config/templates';
 import { useStateContext } from '../Layout/stateContext';
 
 interface FormGeneratorProps {
   template: Template;
-  values: Record<string, any>;
+  values: FormValues;
   onChange: (key: string, value: any) => void;
+}
+
+function isSelectInput(input: TemplateInput): input is SelectInput {
+  return input.type === 'select';
 }
 
 export function FormGenerator({ template, values, onChange }: FormGeneratorProps) {
   const t = useTranslations();
 
-  const renderInput = (input: TemplateInput) => {
-    const label = t(`Templates.${template.id}.fields.${input.labelKey}`);
+  const getFieldLabel = (input: TemplateInput): string => {
+    return t(`Templates.${template.id}.fields.${input.labelKey}`);
+  };
 
-    const defaultValue = input.type === 'daterange' ? [null, null] : '';
-    const value = values[input.key] ?? defaultValue;
+  const renderInput = (input: TemplateInput) => {
+    const label = getFieldLabel(input);
+    const value = values[input.key];
     const inputId = `field-${input.key}`;
-    const describedById = input.required ? `${inputId}-required` : undefined;
 
     const commonProps = {
       id: inputId,
       label,
       required: input.required,
       placeholder: input.placeholder,
-      'aria-describedby': describedById,
+      disabled: input.disabled,
       'aria-required': input.required || undefined,
     };
 
@@ -47,8 +52,10 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
         return (
           <TextInput
             {...commonProps}
-            value={value}
+            value={(value as string) ?? ''}
             onChange={(e) => onChange(input.key, e.target.value)}
+            maxLength={input.maxLength}
+            pattern={input.pattern}
             autoComplete="off"
           />
         );
@@ -57,9 +64,10 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
         return (
           <Textarea
             {...commonProps}
-            value={value}
+            value={(value as string) ?? ''}
             onChange={(e) => onChange(input.key, e.target.value)}
-            minRows={3}
+            minRows={input.minRows ?? 3}
+            maxRows={input.maxRows}
             autosize
           />
         );
@@ -68,8 +76,11 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
         return (
           <NumberInput
             {...commonProps}
-            value={value}
+            value={(value as number) ?? undefined}
             onChange={(val) => onChange(input.key, val)}
+            min={input.min}
+            max={input.max}
+            step={input.step}
             inputMode="numeric"
           />
         );
@@ -78,8 +89,10 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
         return (
           <DateInput
             {...commonProps}
-            value={value}
+            value={(value as Date) ?? null}
             onChange={(val) => onChange(input.key, val)}
+            minDate={input.minDate}
+            maxDate={input.maxDate}
             valueFormat="DD/MM/YYYY"
             aria-label={`${label} date picker`}
           />
@@ -89,7 +102,7 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
         return (
           <TimeInput
             {...commonProps}
-            value={value}
+            value={(value as string) ?? ''}
             onChange={(e) => onChange(input.key, e.target.value)}
             aria-label={`${label} time input`}
           />
@@ -100,28 +113,33 @@ export function FormGenerator({ template, values, onChange }: FormGeneratorProps
           <DatePickerInput
             {...commonProps}
             type="range"
-            value={value}
+            value={(value as [Date, Date]) ?? [null, null]}
             onChange={(val) => onChange(input.key, val)}
+            minDate={input.minDate}
+            maxDate={input.maxDate}
             valueFormat="DD/MM/YYYY"
             aria-label={`${label} date range picker`}
           />
         );
 
-      case 'select':
+      case 'select': {
+        if (!isSelectInput(input)) {
+          return null;
+        }
+
         return (
           <Select
             {...commonProps}
-            value={value}
+            value={(value as string) ?? null}
             onChange={(val) => onChange(input.key, val)}
             aria-label={`${label} dropdown`}
-            data={
-              input.options?.map((opt) => ({
-                value: opt.value,
-                label: t(opt.labelKey),
-              })) || []
-            }
+            data={input.options.map((opt) => ({
+              value: opt.value,
+              label: t(`Templates.${template.id}.fields.${opt.labelKey}`),
+            }))}
           />
         );
+      }
 
       default:
         return null;
