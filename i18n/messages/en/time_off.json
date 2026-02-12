@@ -28,5 +28,21 @@
       "date_range_label": "Vacation Dates",
       "reason_label": "Reason (Optional)"
     }
+  },
+  "leave_request": {
+    "name": "Leave Request",
+    "subject": "Leave Request - {fullName}",
+    "body": "Hi,\n\n{managerName} \n{managerRole}.\n\nI would like to request leave permission on {leaveDate} for {leaveDuration} starting at {timeOfLeave}.\n\n{reason, select, other {{ reason  }\n\n}}Please let me know if you need any additional information or if there are any concerns with this period.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "fields": {
+      "manager_label": "Manager Name",
+      "manager_role_label": "Manager Role (Optional)",
+      "date_label": "Leave Date",
+      "time_of_leave_label": "Time of Leave",
+      "duration_label": "Duration",
+      "duration_1_hour_label": "1 Hour",
+      "duration_2_hours_label": "2 Hours",
+      "duration_half_day_label": "Half Day",
+      "reason_label": "Reason (Optional)"
+    }
   }
 }

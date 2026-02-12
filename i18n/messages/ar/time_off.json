@@ -28,5 +28,21 @@
       "date_range_label": "تواريخ الإجازة",
       "reason_label": "السبب (اختياري)"
     }
+  },
+  "leave_request": {
+    "name": "طلب خروج",
+    "subject": "طلب خروج - {fullName}",
+    "body": "السلام عليكم،\n\n{managerName}\n{managerRole}.\n\nأود تقديم طلب خروج في {leaveDate} لمدة {leaveDuration} بدأََ من الساعة {timeOfLeave}.\n\n{reason, select, other {{ reason }\n\n}}يرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية أو إذا كان هناك أي مخاوف بشأن هذا التوقيت.\n\nشكراً لكم،\n{fullName}\n{jobTitle}",
+    "fields": {
+      "manager_label": "اسم المدير",
+      "manager_role_label": "صفة المدير (اختياري)",
+      "date_label": "تاريخ الإذن",
+      "time_of_leave_label": "وقت الإذن",
+      "duration_label": "المدة",
+      "duration_1_hour_label": "ساعة واحدة",
+      "duration_2_hours_label": "ساعتان",
+      "duration_half_day_label": "نصف يوم",
+      "reason_label": "السبب (اختياري)"
+    }
   }
 }
