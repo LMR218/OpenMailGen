@@ -37,8 +37,8 @@
   },
   "sick_leave_sudden": {
     "name": "Sudden Sick Leave",
-    "subject": "Sick Leave - {leaveDate} - {fullName}",
-    "body": "Hi {managerName},\n\nI am writing to inform you that I am unwell today ({leaveDate}) and will not be able to come to work.\n\n{reason, select, other {{reason}\n\n}}I will keep you updated on my recovery and expected return date.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "subject": "Sick Leave - {fullName}",
+    "body": "Hi,\n\n{managerName},\n\nI am writing to inform you that I am unwell today ({leaveDate}) and will not be able to come to work.\n\nI will keep you updated on my recovery and expected return date.\n\nBest regards,\n{fullName}\n{jobTitle}",
     "fields": {
       "manager_label": "Manager Name",
       "date_label": "Date of Absence",

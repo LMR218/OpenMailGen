@@ -56,7 +56,6 @@ export const timeOffTemplates: Template[] = [
     inputs: [
       { key: 'managerName', type: 'text', labelKey: 'manager_label', required: true },
       { key: 'leaveDate', type: 'date', labelKey: 'date_label', required: true },
-      { key: 'reason', type: 'textarea', labelKey: 'reason_label' },
     ],
   },
 ];

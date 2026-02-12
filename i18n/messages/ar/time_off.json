@@ -37,8 +37,8 @@
   },
   "sick_leave_sudden": {
     "name": "إجازة مرضية طارئة",
-    "subject": "إجازة مرضية - {leaveDate} - {fullName}",
-    "body": "مرحباً {managerName}،\n\nأود إبلاغكم بأنني لست بصحة جيدة اليوم ({leaveDate}) ولن أتمكن من الحضور للعمل.\n\n{reason, select, other {{reason}\n\n}}سأبقيكم على اطلاع بتطورات حالتي الصحية وموعد عودتي المتوقع.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
+    "subject": "إجازة مرضية - {fullName}",
+    "body": "السلام عليكم،\n\n{managerName}.\n\nأود إبلاغكم بأنني لست بصحة جيدة اليوم ({leaveDate}) ولن أتمكن من الحضور للعمل.\n\nسأبقيكم على اطلاع بتطورات حالتي الصحية وموعد عودتي المتوقع.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
     "fields": {
       "manager_label": "اسم المدير",
       "date_label": "تاريخ الغياب",
