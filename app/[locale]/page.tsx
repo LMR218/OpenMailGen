@@ -132,7 +132,7 @@ export default async function HomePage({ params }: PageProps) {
         py={60}
         id="faq"
         style={{
-          background: 'light-dark(var(--mantine-color-gray-0), var(--mantine-color-gray-8))',
+          background: 'light-dark(var(--mantine-color-gray-1), var(--mantine-color-gray-8))',
           borderRadius: 'var(--mantine-radius-lg)',
         }}
       >
@@ -144,7 +144,7 @@ export default async function HomePage({ params }: PageProps) {
 
             <Accordion variant="separated" radius="md">
               {faqItems.map((item) => (
-                <AccordionItem key={item} value={item}>
+                <AccordionItem bg="var(--mantine-color-body)" key={item} value={item}>
                   <AccordionControl>
                     <Text fw={500} fz={{ base: '0.875rem', md: '1.25rem' }}>
                       {t(`faq.items.${item}.question`)}
