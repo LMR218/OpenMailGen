@@ -14,7 +14,6 @@ export const hrRequestsTemplates: Template[] = [
     id: 'salary_certificate',
     category: 'hr_requests',
     inputs: [
-      { key: 'purpose', type: 'text', labelKey: 'purpose_label', required: true },
       { key: 'neededBy', type: 'date', labelKey: 'needed_by_label', required: true },
       { key: 'additionalInfo', type: 'textarea', labelKey: 'additional_info_label' },
     ],
@@ -25,7 +24,6 @@ export const hrRequestsTemplates: Template[] = [
     inputs: [
       { key: 'recipientName', type: 'text', labelKey: 'recipient_name_label', required: true },
       { key: 'recipientOrg', type: 'text', labelKey: 'recipient_org_label', required: true },
-      { key: 'purpose', type: 'text', labelKey: 'purpose_label', required: true },
     ],
   },
 ];

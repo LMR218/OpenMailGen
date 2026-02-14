@@ -12,7 +12,7 @@
   "salary_certificate": {
     "name": "Salary Certificate Request",
     "subject": "Salary Certificate Request - {fullName}",
-    "body": "Dear HR Team,\n\nI kindly request a salary certificate for {purpose}.\n\nPlease include the following details:\n- Current position and department\n- Date of joining\n- Current salary details\n\n{additionalInfo, select, other {Additional requirements: {additionalInfo}\n\n}}I would appreciate receiving this certificate by {neededBy} if possible.\n\nThank you for your assistance.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "body": "Dear HR Team,\n\nI kindly request a salary certificate.\n\nPlease include the following details:\n- Current position and department\n- Date of joining\n- Current salary details\n\n{additionalInfo, select, other {Additional requirements:\n{additionalInfo}\n\n}}I would appreciate receiving this certificate by {neededBy} if possible.\n\nThank you for your assistance.\n\nBest regards,\n{fullName}",
     "fields": {
       "purpose_label": "Purpose (e.g., Bank loan, Visa application)",
       "needed_by_label": "Needed By Date",
@@ -22,7 +22,7 @@
   "employment_verification": {
     "name": "Employment Verification Letter",
     "subject": "Employment Verification Request - {fullName}",
-    "body": "Dear HR Team,\n\nI am requesting an employment verification letter addressed to:\n\nRecipient: {recipientName}\nOrganization: {recipientOrg}\n\nPurpose: {purpose}\n\nPlease include my employment dates, current position, and salary information if required.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "body": "Dear HR Team,\n\nI am requesting an employment verification letter addressed to:\n\nRecipient: {recipientName}\nOrganization: {recipientOrg}\n\nPlease include my employment dates, current position, and salary information if required.\n\nThank you,\n{fullName}",
     "fields": {
       "recipient_name_label": "Recipient Name",
       "recipient_org_label": "Recipient Organization",
