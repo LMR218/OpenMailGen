@@ -2,7 +2,7 @@
   "day_off": {
     "name": "Day Off",
     "subject": "Day Off - {fullName}",
-    "body": "Hi, \n\n{managerName}\n{managerRole},\n\nI am writing to inform you that I am requesting a day off on ({leaveDate}) and will not be able to come to work.\n\n{reason, select, other {{reason}\n\n}}I am hoping to return to work on the next working day.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "body": "Hi, \n\n{managerName},\n\nI am writing to inform you that I am requesting a day off on ({leaveDate}) and will not be able to come to work.\n\nI am hoping to return to work on the next working day.\n\nBest regards,\n{fullName}",
     "fields": {
       "manager_label": "Manager Name",
       "manager_role_label": "Manager Role (Optional)",
@@ -13,7 +13,7 @@
   "vacation_request": {
     "name": "Vacation Request",
     "subject": "Vacation Request - {fullName}",
-    "body": "Hi,\n\n{managerName}.\n\nI would like to request time off from {dateRange}.\n\nPlease let me know if you need any additional information or if there are any concerns with these dates.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "body": "Hi,\n\n{managerName}.\n\nI would like to request time off from {dateRange}.\n\nPlease let me know if you need any additional information or if there are any concerns with these dates.\n\nThank you,\n{fullName}",
     "fields": {
       "manager_label": "Manager Name",
       "date_range_label": "Vacation Dates"
@@ -22,7 +22,7 @@
   "leave_request": {
     "name": "Leave Request",
     "subject": "Leave Request - {fullName}",
-    "body": "Hi,\n\n{managerName} \n{managerRole}.\n\nI would like to request leave permission on {leaveDate} for {leaveDuration} starting at {timeOfLeave}.\n\n{reason, select, other {{ reason  }\n\n}}Please let me know if you need any additional information or if there are any concerns with this period.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "body": "Hi,\n\n{managerName}.\n\nI would like to request leave permission on {leaveDate} for {leaveDuration} starting at {timeOfLeave}.\n\nPlease let me know if you need any additional information or if there are any concerns with this period.\n\nThank you,\n{fullName}",
     "fields": {
       "manager_label": "Manager Name",
       "manager_role_label": "Manager Role (Optional)",
@@ -31,18 +31,16 @@
       "duration_label": "Duration",
       "duration_1_hour_label": "1 Hour",
       "duration_2_hours_label": "2 Hours",
-      "duration_half_day_label": "Half Day",
-      "reason_label": "Reason (Optional)"
+      "duration_half_day_label": "Half Day"
     }
   },
   "sick_leave_sudden": {
     "name": "Sudden Sick Leave",
     "subject": "Sick Leave - {fullName}",
-    "body": "Hi,\n\n{managerName},\n\nI am writing to inform you that I am unwell today ({leaveDate}) and will not be able to come to work.\n\nI will keep you updated on my recovery and expected return date.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "body": "Hi,\n\n{managerName},\n\nI am writing to inform you that I am unwell today ({leaveDate}) and will not be able to come to work.\n\nI will keep you updated on my recovery and expected return date.\n\nBest regards,\n{fullName}",
     "fields": {
       "manager_label": "Manager Name",
-      "date_label": "Date of Absence",
-      "reason_label": "Additional Details (Optional)"
+      "date_label": "Date of Absence"
     }
   }
 }

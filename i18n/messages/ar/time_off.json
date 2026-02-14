@@ -2,18 +2,16 @@
   "day_off": {
     "name": "طلب اجازة - يوم",
     "subject": "طلب اجازة - {fullName}",
-    "body": "السلام عليكم، \n\n {managerName}\n{managerRole},\n\nأود إبلاغكم بأنني أطلب إجازة لمدة يوم ({leaveDate}) وسأكون غير قادر على الحضور للعمل.\n\n{reason, select, other {{reason}\n\n}}أنا أأمل أن أعود إلى العمل في اليوم التالي.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
+    "body": "السلام عليكم، \n\n {managerName}\n{managerRole},\n\nأود إبلاغكم بأنني أطلب إجازة لمدة يوم ({leaveDate}) وسأكون غير قادر على الحضور للعمل.\n\nأنا أأمل أن أعود إلى العمل في اليوم التالي.\n\nمع أطيب التحيات،\n{fullName}",
     "fields": {
       "manager_label": "اسم المدير",
-      "manager_role_label": "صفة المدير (اختياري)",
-      "date_label": "تاريخ الغياب",
-      "reason_label": "تفاصيل إضافية (اختياري)"
+      "date_label": "تاريخ الغياب"
     }
   },
   "vacation_request": {
     "name": "طلب إجازة - فترة",
     "subject": "طلب إجازة - {fullName}",
-    "body": "السلام عليكم، \n\n{managerName}.  \n\nأود طلب إجازة من {dateRange}.\n\nيرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية أو إذا كان هناك أي اشْكالية بشأن هذه التواريخ.\n\nشكراً لك،\n{fullName}\n{jobTitle}",
+    "body": "السلام عليكم، \n\n{managerName}.  \n\nأود طلب إجازة من {dateRange}.\n\nيرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية أو إذا كان هناك أي اشْكالية بشأن هذه التواريخ.\n\nشكراً لك،\n{fullName}",
     "fields": {
       "manager_label": "اسم المدير",
       "date_range_label": "تواريخ الإجازة"
@@ -22,27 +20,24 @@
   "leave_request": {
     "name": "طلب خروج",
     "subject": "طلب خروج - {fullName}",
-    "body": "السلام عليكم،\n\n{managerName}\n{managerRole}.\n\nأود تقديم طلب خروج في {leaveDate} لمدة {leaveDuration} بدأََ من الساعة {timeOfLeave}.\n\n{reason, select, other {{ reason }\n\n}}يرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية أو إذا كان هناك أي مخاوف بشأن هذا التوقيت.\n\nشكراً لكم،\n{fullName}\n{jobTitle}",
+    "body": "السلام عليكم،\n\n{managerName}.\n\nأود تقديم طلب خروج في {leaveDate} لمدة {leaveDuration} بدأََ من الساعة {timeOfLeave}.\n\nيرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية أو إذا كان هناك أي مخاوف بشأن هذا التوقيت.\n\nشكراً لكم،\n{fullName}",
     "fields": {
       "manager_label": "اسم المدير",
-      "manager_role_label": "صفة المدير (اختياري)",
       "date_label": "تاريخ الإذن",
       "time_of_leave_label": "وقت الإذن",
       "duration_label": "المدة",
       "duration_1_hour_label": "ساعة واحدة",
       "duration_2_hours_label": "ساعتان",
-      "duration_half_day_label": "نصف يوم",
-      "reason_label": "السبب (اختياري)"
+      "duration_half_day_label": "نصف يوم"
     }
   },
   "sick_leave_sudden": {
     "name": "إجازة مرضية طارئة",
     "subject": "إجازة مرضية - {fullName}",
-    "body": "السلام عليكم،\n\n{managerName}.\n\nأود إبلاغكم بأنني لست بصحة جيدة اليوم ({leaveDate}) ولن أتمكن من الحضور للعمل.\n\nسأبقيكم على اطلاع بتطورات حالتي الصحية وموعد عودتي المتوقع.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}",
+    "body": "السلام عليكم،\n\n{managerName}.\n\nأود إبلاغكم بأنني لست بصحة جيدة اليوم ({leaveDate}) ولن أتمكن من الحضور للعمل.\n\nسأبقيكم على اطلاع بتطورات حالتي الصحية وموعد عودتي المتوقع.\n\nمع أطيب التحيات،\n{fullName}",
     "fields": {
       "manager_label": "اسم المدير",
-      "date_label": "تاريخ الغياب",
-      "reason_label": "تفاصيل إضافية (اختياري)"
+      "date_label": "تاريخ الغياب"
     }
   }
 }
