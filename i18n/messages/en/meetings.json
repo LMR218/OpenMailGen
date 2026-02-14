@@ -2,7 +2,7 @@
   "meeting_notes": {
     "name": "Meeting Notes",
     "subject": "Meeting Notes - {meetingTitle} - {meetingDate}",
-    "body": "Hi Team,\n\nPlease find below the notes from our meeting:\n\nMeeting: {meetingTitle}\nDate: {meetingDate}\nAttendees: {attendees}\n\nKey Discussion Points:\n{discussionPoints}\n\nAction Items:\n{actionItems}\n\nNext Steps:\n{nextSteps}\n\nPlease let me know if I missed anything or if you have any questions.\n\nBest regards,\n{fullName}",
+    "body": "Hi Team,\n\nPlease find below the notes from our meeting:\n\nMeeting: {meetingTitle}\nDate: {meetingDate}\nAttendees:\n{attendees}\n\nKey Discussion Points:\n{discussionPoints}\n\nAction Items:\n{actionItems}\n\nNext Steps:\n{nextSteps}\n\nPlease let me know if I missed anything or if you have any questions.\n\nBest regards,\n{fullName}\n{jobTitle}",
     "fields": {
       "meeting_title_label": "Meeting Title",
       "meeting_date_label": "Meeting Date",
@@ -15,7 +15,7 @@
   "meeting_reschedule": {
     "name": "Meeting Reschedule",
     "subject": "Request to Reschedule: {meetingTitle}",
-    "body": "Hi {recipientName},\n\nI hope this message finds you well.\n\nI am writing to request a reschedule of our meeting originally planned for {originalDate}.\n\nReason: {reason}\n\nI would like to propose the following alternative times:\n{proposedTimes}\n\nPlease let me know which time works best for you, or suggest an alternative that suits your schedule.\n\nApologies for any inconvenience this may cause.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "body": "Hi {recipientName},\n\nI hope this message finds you well.\n\nI am writing to request a reschedule of our meeting originally planned for {originalDate}.\n\n{reason}\n\nI would like to propose the following alternative times:\n{proposedTimes}\n\nPlease let me know which time works best for you, or suggest an alternative that suits your schedule.\n\nApologies for any inconvenience this may cause.\n\nBest regards,\n{fullName}",
     "fields": {
       "recipient_name_label": "Recipient Name",
       "meeting_title_label": "Meeting Title",
@@ -27,7 +27,7 @@
   "meeting_cancellation": {
     "name": "Meeting Cancellation",
     "subject": "Cancelled: {meetingTitle} - {meetingDate}",
-    "body": "Hi {recipientName},\n\nI regret to inform you that the meeting scheduled for {meetingDate} has been cancelled.\n\nMeeting: {meetingTitle}\nOriginal Date: {meetingDate}\n\nReason: {reason}\n\n{rescheduleNote, select, other {{rescheduleNote}\n\n}}I apologize for any inconvenience this may cause.\n\nBest regards,\n{fullName}\n{jobTitle}",
+    "body": "Hi {recipientName},\n\nI regret to inform you that the meeting scheduled for {meetingDate} has been cancelled.\n\nMeeting: {meetingTitle}\nOriginal Date: {meetingDate}\n\n{reason}\n\n{rescheduleNote, select, other {{rescheduleNote}\n\n}}I apologize for any inconvenience this may cause.\n\nBest regards,\n{fullName}",
     "fields": {
       "recipient_name_label": "Recipient Name",
       "meeting_title_label": "Meeting Title",
