@@ -2,7 +2,7 @@
   "thank_you": {
     "name": "رسالة شكر",
     "subject": "شكراً - {subject}",
-    "body": "عزيزي {recipientName}،\n\nأردت أن أخصص لحظة للتعبير عن امتناني الصادق لـ {reason}.\n\n{additionalMessage, select, other {{additionalMessage}\n\n}}دعمكم ومساعدتكم موضع تقدير كبير.\n\nشكراً لكم مرة أخرى.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}\n{companyName}",
+    "body": "السلام عليكم، {recipientName}،\n\nأردت أن أخصص لحظة للتعبير عن امتناني  لـ {reason}.\n\n{additionalMessage, select, other {{additionalMessage}\n\n}}دعمكم ومساعدتكم موضع تقدير كبير.\n\nشكراً لكم مرة أخرى.\n\nمع أطيب التحيات،\n{fullName}",
     "fields": {
       "recipient_name_label": "اسم المستلم",
       "subject_label": "الموضوع",
@@ -13,7 +13,7 @@
   "follow_up": {
     "name": "رسالة متابعة",
     "subject": "متابعة: {originalSubject}",
-    "body": "مرحباً {recipientName}،\n\nأتمنى أن تصلك هذه الرسالة وأنت بخير.\n\nأتابع معك بخصوص {context} من {originalDate}.\n\n{additionalContext, select, other {{additionalContext}\n\n}}أقدر لو تمكنت من تزويدي بتحديث عندما يكون لديك وقت.\n\nيرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية من طرفي.\n\nشكراً لك،\n{fullName}\n{jobTitle}",
+    "body": "السلام عليكم، {recipientName}،\n\nأتمنى أن تصلك هذه الرسالة وأنت بخير.\n\nأتابع معك بخصوص {context} من {originalDate}.\n\n{additionalContext, select, other {{additionalContext}\n\n}}أقدر لو تمكنت من تزويدي بتحديث عندما يكون لديك وقت.\n\nيرجى إعلامي إذا كنت بحاجة لأي معلومات إضافية من طرفي.\n\nشكراً لك،\n{fullName}",
     "fields": {
       "recipient_name_label": "اسم المستلم",
       "original_subject_label": "الموضوع الأصلي",
@@ -25,7 +25,7 @@
   "introduction": {
     "name": "تعريف بالنفس",
     "subject": "تعريف - {fullName}، {jobTitle}",
-    "body": "عزيزي {recipientName}،\n\nأتمنى أن تصلك هذه الرسالة وأنت بخير.\n\nاسمي {fullName}، وأنا {jobTitle} في {companyName}. {introContext}\n\n{background, select, other {نبذة عن خلفيتي: {background}\n\n}}أود التواصل و{connectionPurpose}.\n\nلا تتردد في التواصل معي إذا كان لديك أي أسئلة أو ترغب في جدولة مكالمة.\n\nمع أطيب التحيات،\n{fullName}\n{jobTitle}\n{companyName}",
+    "body": "السلام عليكم، {recipientName}،\n\nأتمنى أن تصلك هذه الرسالة وأنت بخير.\n\nاسمي {fullName}، أعمل كـ {jobTitle} في {companyName}.\n\n{background, select, other {نبذة عن خلفيتي:\n{background}\n\n}}أود التواصل معك {connectionPurpose}.\n\nلا تتردد في التواصل معي إذا كان لديك أي أسئلة أو ترغب في جدولة مكالمة.\n\nمع أطيب التحيات.",
     "fields": {
       "recipient_name_label": "اسم المستلم",
       "intro_context_label": "سياق التعريف",

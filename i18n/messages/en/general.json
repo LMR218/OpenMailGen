@@ -2,7 +2,7 @@
   "thank_you": {
     "name": "Thank You Email",
     "subject": "Thank You - {subject}",
-    "body": "Dear {recipientName},\n\nI wanted to take a moment to express my sincere gratitude for {reason}.\n\n{additionalMessage, select, other {{additionalMessage}\n\n}}Your support and assistance are greatly appreciated.\n\nThank you once again.\n\nBest regards,\n{fullName}\n{jobTitle}\n{companyName}",
+    "body": "Dear {recipientName},\n\nI wanted to take a moment to express my sincere gratitude for {reason}.\n\n{additionalMessage, select, other {{additionalMessage}\n\n}}Your support and assistance are greatly appreciated.\n\nThank you once again.\n\nBest regards,\n{fullName}",
     "fields": {
       "recipient_name_label": "Recipient Name",
       "subject_label": "Subject",
@@ -13,7 +13,7 @@
   "follow_up": {
     "name": "Follow Up Email",
     "subject": "Following Up: {originalSubject}",
-    "body": "Hi {recipientName},\n\nI hope this email finds you well.\n\nI am following up on {context} from {originalDate}.\n\n{additionalContext, select, other {{additionalContext}\n\n}}I would appreciate an update when you have a moment.\n\nPlease let me know if you need any additional information from my end.\n\nThank you,\n{fullName}\n{jobTitle}",
+    "body": "Hi {recipientName},\n\nI hope this email finds you well.\n\nI am following up on {context} from {originalDate}.\n\n{additionalContext, select, other {{additionalContext}\n\n}}I would appreciate an update when you have a moment.\n\nPlease let me know if you need any additional information from my end.\n\nThank you,\n{fullName}",
     "fields": {
       "recipient_name_label": "Recipient Name",
       "original_subject_label": "Original Subject",
@@ -25,7 +25,7 @@
   "introduction": {
     "name": "Self Introduction",
     "subject": "Introduction - {fullName}, {jobTitle}",
-    "body": "Dear {recipientName},\n\nI hope this email finds you well.\n\nMy name is {fullName}, and I am the {jobTitle} at {companyName}. {introContext}\n\n{background, select, other {A bit about my background: {background}\n\n}}I would love to connect and {connectionPurpose}.\n\nPlease feel free to reach out if you have any questions or would like to schedule a call.\n\nBest regards,\n{fullName}\n{jobTitle}\n{companyName}",
+    "body": "Dear {recipientName},\n\nI hope this email finds you well.\n\nMy name is {fullName}, and I am a {jobTitle} at {companyName}.\n\n{background, select, other {A bit about my background:\n{background}\n\n}}I would love to connect and {connectionPurpose}.\n\nPlease feel free to reach out if you have any questions or would like to schedule a call.\n\nBest regards.",
     "fields": {
       "recipient_name_label": "Recipient Name",
       "intro_context_label": "Context for Introduction",

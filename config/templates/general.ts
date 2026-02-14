@@ -27,7 +27,6 @@ export const generalTemplates: Template[] = [
     category: 'general',
     inputs: [
       { key: 'recipientName', type: 'text', labelKey: 'recipient_name_label', required: true },
-      { key: 'introContext', type: 'textarea', labelKey: 'intro_context_label', required: true },
       { key: 'background', type: 'textarea', labelKey: 'background_label' },
       {
         key: 'connectionPurpose',
